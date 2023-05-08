@@ -5,17 +5,21 @@ import VIEW from '../../../assets/images/icons/eye.png'
 import DELETE from '../../../assets/images/icons/delete.png'
 import EDIT from '../../../assets/images/icons/edit.png'
 
-const Products = () => {
+const Products = ({product,handleDelete}) => {
+    const{_id,name,chef,taste,photourl}=product;
+// deleting the Image;
+
+
     return (
         <Col>
             <div className='d-flex justify-content-center align-items-center gap-4 mb-2' style={{ backgroundColor: "antiquewhite", borderRadius: "20px" }}>
                 <div>
-                    <img src={IMG1} className='img-fluid' alt="" />
+                    <img src={photourl} className='img-fluid' alt="" />
                 </div>
                 <div>
-                    <p>Name:Munna</p>
-                    <p>Chef:Munna</p>
-                    <p>Price:890 Taka</p>
+                    <p>Name:<span className='fw-bold'> {name}</span></p>
+                    <p>Chef:<span className='fw-bold'> {chef}</span></p>
+                    <p>Taste:<span className='fw-bold'> {taste}</span></p>
                 </div>
                 <div>
                     <p>
@@ -24,7 +28,7 @@ const Products = () => {
                     <p>
                         <img src={EDIT} width={20} alt="" />
                     </p>
-                    <p>
+                    <p onClick={()=>handleDelete(_id)}>
                         <img src={DELETE} width={20} alt="" />
                     </p>
                 </div>
