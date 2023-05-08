@@ -1,0 +1,13 @@
+.form-control{
+    width: 300px;
+}
+.myform-control{
+    width: 700px;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+
+.addbtn{
+    width: 700px;
+}

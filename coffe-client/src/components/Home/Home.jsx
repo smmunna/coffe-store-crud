@@ -5,6 +5,7 @@ import Features from './Features/Features';
 import { Row } from 'react-bootstrap';
 import Products from './Products/Products';
 import CoofeImg from '../../assets/images/icons/1.png'
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -21,7 +22,7 @@ const Home = () => {
            <div className='container mt-5'>
             <div className='text-center my-4'>
                 <h3 className='display-5'>Our Popular Products </h3>
-                <button className='text-center'>Add Coffe <img src={CoofeImg} width={20} alt="" /></button>
+                <Link to="/addcoffe"><button className='text-center'>Add Coffe <img src={CoofeImg} width={20} alt="" /></button></Link>
             </div>
            <Row xs={1} md={2} className="">
                 <Products/>
