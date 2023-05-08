@@ -9,20 +9,32 @@ import {
 import Main from './layout/Main';
 import Home from './components/Home/Home'
 import AddCoffe from './components/AddCoffe/AddCoffe';
+import OneProduct from './components/Home/Products/OneProduct/OneProduct';
+import UpdateProduct from './components/Home/Products/UpdateProduct/UpdateProduct';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
-    children:[
+    element: <Main />,
+    children: [
       {
-        path:"/",
-        element:<Home/>,
-        loader:()=>fetch('http://localhost:5000/coffe')
+        path: "/",
+        element: <Home />,
+        loader: () => fetch('http://localhost:5000/coffe')
       },
       {
-        path:"/addcoffe",
-        element:<AddCoffe/>
+        path: "/addcoffe",
+        element: <AddCoffe />
+      },
+      {
+        path: "/addcoffe/:id",
+        element: <OneProduct />,
+        loader: ({ params }) => fetch(`http://localhost:5000/coffe/${params.id}`)
+      },
+      {
+        path: "/addcoffe/edit/:id",
+        element: <UpdateProduct />,
+        loader: ({ params }) => fetch(`http://localhost:5000/coffe/edit/${params.id}`)
       }
     ]
   },
@@ -30,6 +42,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

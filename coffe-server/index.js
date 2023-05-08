@@ -36,10 +36,51 @@ async function run() {
             res.send(result);
         })
 
+        // Get all items;
         app.get('/coffe',async(req,res)=>{
             const result = await coffeCollection.find().toArray();
             res.send(result); 
         })
+
+        // Get individual items details;
+        app.get('/coffe/:id',async(req,res)=>{
+            const id = req.params.id;
+            const cursor = {_id:new ObjectId(id)}
+            const result = await coffeCollection.findOne(cursor);
+            res.send(result)
+        })
+
+        // Updating the Data;
+        app.get('/coffe/edit/:id',async(req,res)=>{
+            const id = req.params.id;
+            const cursor = {_id:new ObjectId(id)}
+            const result = await coffeCollection.findOne(cursor);
+            res.send(result)
+        })
+
+        app.put('/coffe/edit/:id',async(req,res)=>{
+            const id = req.params.id;
+            const filter = {_id:new ObjectId(id)}
+            const options = { upsert: true };
+            const updatedCoffe = req.body;
+
+            const coffe = {
+                $set:{
+                    name:updatedCoffe.name,
+                    supplier:updatedCoffe.supplier,
+                    category:updatedCoffe.category,
+                    chef:updatedCoffe.chef,
+                    taste:updatedCoffe.taste,
+                    details:updatedCoffe.details,
+                    photourl:updatedCoffe.photourl,
+
+                }
+            }
+
+            const result = await coffeCollection.updateOne(filter,coffe,options)
+            res.send(result)
+        })
+
 
         // Deleting the Document from database;
         app.delete('/coffe/:id',async(req,res)=>{
