@@ -1,0 +1,33 @@
+.footer-part{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.foot-formcontrol{
+    border: 1px solid rgba(0, 0, 0, 0.333)!important;
+    transition: all 0.5s;
+}
+.foot-formcontrol:focus{
+    box-shadow: 2px 2px 5px blue!important;
+}
+.foot-sms-box{
+    height: 100px!important;
+}
+
+.footer-right{
+    padding-top: 65%;
+}
+
+@media screen and (max-width:576px) {
+    .footer-part{
+        flex-direction: column;
+    }
+    .footer-right{
+        padding-top: 2%;
+    }
+    .footer-left{
+        padding: 35px;
+    }
+}
