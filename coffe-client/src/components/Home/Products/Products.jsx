@@ -8,7 +8,7 @@ import EDIT from '../../../assets/images/icons/edit.png'
 const Products = () => {
     return (
         <Col>
-            <div className='d-flex justify-content-center align-items-center gap-3 mb-2' style={{ backgroundColor: "#ECEAE3", borderRadius: "20px" }}>
+            <div className='d-flex justify-content-center align-items-center gap-4 mb-2' style={{ backgroundColor: "antiquewhite", borderRadius: "20px" }}>
                 <div>
                     <img src={IMG1} className='img-fluid' alt="" />
                 </div>
