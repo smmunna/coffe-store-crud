@@ -7,16 +7,15 @@ const Home = () => {
     return (
         <>
             <div className='cover-bg'>
-            <Cover/>
+                <Cover />
             </div>
 
-<div style={{ backgroundColor: "#ECEAE3" }}>
-
-            <Features/>
-</div>
+            <div style={{ backgroundColor: "#ECEAE3" }}>
+                <Features />
+            </div>
 
         </>
-        
+
     );
 }
 
