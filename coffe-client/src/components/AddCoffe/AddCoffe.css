@@ -11,3 +11,21 @@
 .addbtn{
     width: 700px;
 }
+
+
+@media screen and (max-width:576px) {
+    .form-control{
+        width: 350px;
+    }
+    .myform-control{
+        width: 100%;
+    }
+    .addbtn{
+        width: 100%;
+    }
+}
+@media screen and (max-width:320px) {
+    .form-control{
+        width: 250px;
+    }
+}

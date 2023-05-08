@@ -11,35 +11,35 @@ const AddCoffe = () => {
             <hr />
             <div className='d-flex justify-content-center'>
                 <form>
-                    <div className="d-flex justify-content-center gap-5">
+                    <div className="d-lg-flex justify-content-center gap-5">
                         <div>
-                            <label htmlFor="name" class="form-label">Name</label>
+                            <label htmlFor="name" class="form-label fs-5">Name</label>
                             <input type="text" className='form-control' name='name' required /> <br />
 
-                            <label htmlFor="supplier" class="form-label">Supplier</label>
+                            <label htmlFor="supplier" class="form-label fs-5">Supplier</label>
                             <input type="text" className='form-control' name='supplier' required />
                             <br />
-                            <label htmlFor="category" class="form-label">Category</label>
+                            <label htmlFor="category" class="form-label fs-5">Category</label>
                             <input type="text" className='form-control' name='category' required />
 
 
                         </div>
                         <br />
                         <div>
-                            <label htmlFor="name" class="form-label">Chef</label>
+                            <label htmlFor="name" class="form-label fs-5">Chef</label>
                             <input type="text" className='form-control' name='chef' required />
                             <br />
-                            <label htmlFor="name" class="form-label">Taste</label>
+                            <label htmlFor="name" class="form-label fs-5">Taste</label>
                             <input type="text" className='form-control' name='taste' required />
                             <br />
-                            <label htmlFor="details" class="form-label">Details</label>
+                            <label htmlFor="details" class="form-label fs-5">Details</label>
                             <input type="text" className='form-control' name='details' required />
                         </div>
                     </div>
                     <br />
-                    <label htmlFor="photo" class="form-label">Photo Url</label>
+                    <label htmlFor="photo" class="form-label fs-5">Photo Url</label>
                     <input type="text" className='form-control myform-control' name='photo' required />
-                    <button type="submit" className='addbtn mt-4'>Add Coffe</button>
+                    <button type="submit" className='addbtn mt-4 fs-5'>Add Coffe</button>
                 </form>
             </div>
         </div>
