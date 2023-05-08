@@ -33,13 +33,13 @@ const Footer = () => {
             <div>
                 <div className='footer-right'>
                     <h3>Contact with us</h3>
-                    <label htmlFor="name" class="form-label fs-5">Name</label>
+                    <label htmlFor="name" className="form-label fs-5">Name</label>
                     <input type="text" className='form-control foot-formcontrol' name='name' required /> <br />
 
-                    <label htmlFor="supplier" class="form-label fs-5">Email</label>
+                    <label htmlFor="supplier" className="form-label fs-5">Email</label>
                     <input type="text" className='form-control foot-formcontrol' name='supplier' required />
                     <br />
-                    <label htmlFor="supplier" class="form-label fs-5">Message</label>
+                    <label htmlFor="supplier" className="form-label fs-5">Message</label>
                     <input type="text" className='form-control foot-formcontrol foot-sms-box' name='supplier' required />
                     <br />
                     <button className='btn btn-primary w-50'>Send</button>

@@ -30,7 +30,11 @@ async function run() {
 
         // Write down all of your routes;
        
-        
+        app.post('/coffe',async(req,res)=>{
+            const products = req.body;
+            const result = await coffeCollection.insertOne(products)
+            res.send(result);
+        })
 
 
         // Send a ping to confirm a successful connection

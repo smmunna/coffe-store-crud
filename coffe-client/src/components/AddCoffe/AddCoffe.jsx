@@ -1,7 +1,46 @@
 import React from 'react';
 import './AddCoffe.css'
+import Swal from 'sweetalert2'
 
 const AddCoffe = () => {
+
+    const handleSubmitProduct = event => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const supplier = form.supplier.value;
+        const category = form.category.value;
+        const chef = form.chef.value;
+        const taste = form.taste.value;
+        const details = form.details.value;
+        const photourl = form.photourl.value;
+
+        const products = { name, supplier, category, chef, taste, details, photourl }
+
+        // sending the Data to the server;
+        fetch('http://localhost:5000/coffe', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(products)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Product item hasbeen added successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    form.reset()
+                }
+            })
+    }
+
+
     return (
         <div className='addCoffe py-3'>
             <div className='text-center mt-4 px-4'>
@@ -10,35 +49,35 @@ const AddCoffe = () => {
             </div>
             <hr />
             <div className='d-flex justify-content-center'>
-                <form>
+                <form onSubmit={handleSubmitProduct}>
                     <div className="d-lg-flex justify-content-center gap-5">
                         <div>
-                            <label htmlFor="name" class="form-label fs-5">Name</label>
+                            <label htmlFor="name" className="form-label fs-5">Name</label>
                             <input type="text" className='form-control' name='name' required /> <br />
 
-                            <label htmlFor="supplier" class="form-label fs-5">Supplier</label>
+                            <label htmlFor="supplier" className="form-label fs-5">Supplier</label>
                             <input type="text" className='form-control' name='supplier' required />
                             <br />
-                            <label htmlFor="category" class="form-label fs-5">Category</label>
+                            <label htmlFor="category" className="form-label fs-5">Category</label>
                             <input type="text" className='form-control' name='category' required />
 
 
                         </div>
                         <br />
                         <div>
-                            <label htmlFor="name" class="form-label fs-5">Chef</label>
+                            <label htmlFor="name" className="form-label fs-5">Chef</label>
                             <input type="text" className='form-control' name='chef' required />
                             <br />
-                            <label htmlFor="name" class="form-label fs-5">Taste</label>
+                            <label htmlFor="name" className="form-label fs-5">Taste</label>
                             <input type="text" className='form-control' name='taste' required />
                             <br />
-                            <label htmlFor="details" class="form-label fs-5">Details</label>
+                            <label htmlFor="details" className="form-label fs-5">Details</label>
                             <input type="text" className='form-control' name='details' required />
                         </div>
                     </div>
                     <br />
-                    <label htmlFor="photo" class="form-label fs-5">Photo Url</label>
-                    <input type="text" className='form-control myform-control' name='photo' required />
+                    <label htmlFor="photo" className="form-label fs-5">Photo Url</label>
+                    <input type="text" className='form-control myform-control' name='photourl' required />
                     <button type="submit" className='addbtn mt-4 fs-5'>Add Coffe</button>
                 </form>
             </div>
