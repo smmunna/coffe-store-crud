@@ -1,15 +1,22 @@
+.addCoffe{
+    background: #F4F3F0;
+
+}
 .form-control{
     width: 300px;
+    border: none;
 }
 .myform-control{
     width: 700px;
 }
 .form-control:focus{
     box-shadow: none;
+    border: none;
 }
 
 .addbtn{
     width: 700px;
+    background-color: bisque;
 }
 
 
@@ -22,6 +29,7 @@
     }
     .addbtn{
         width: 100%;
+      
     }
 }
 @media screen and (max-width:320px) {

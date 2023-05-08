@@ -3,7 +3,7 @@ import './AddCoffe.css'
 
 const AddCoffe = () => {
     return (
-        <div>
+        <div className='addCoffe py-3'>
             <div className='text-center mt-4 px-4'>
                 <h3 className='display-4'>Add New Coffe</h3>
                 <p className='fs-4'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
